@@ -1,6 +1,12 @@
+import SignInForm from "./Components/SignInForm";
+import SignUpForm from "./Components/SignUpForm";
+
 const App = () => {
   return(
-    <div className="text-[64px]">Tailwind is Working</div>
+    <div>
+      <SignInForm />
+      <SignUpForm />
+    </div>
   );
 };
 
