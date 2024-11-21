@@ -16,3 +16,13 @@ The following are the main dependancies that have been used in the application;
 - **Zod** for form and data validation.
 - **@tanstack/react-query** for data fetching and mutations.
 - **@tanstack/react-table** for rendering paginated todos.
+- **react-router-dom** for page navigation.
+
+
+## Basic Commands
+
+The following are the main commands that can be used when working with the application
+`npm run dev` - This command starts the application in development mode
+`npm run build` - This command creates a build that we can use in production.
+`npm run lint` - This command is used for lint checks to make sure that the application is upto standard.
+
