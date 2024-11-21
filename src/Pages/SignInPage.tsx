@@ -23,7 +23,7 @@ const SignInPage = () => {
     formState: {errors},
   } = useForm<userInforType>({resolver: zodResolver(userInfor)});
 
-  const onSubmit: SubmitHandler<userInforType> = (data) => {
+  const onSubmit: SubmitHandler<userInforType> = (/*data*/) => {
     //Navigation to the /tasks page when the data is successfuly validated
     window.location.href='/tasks';
   };
