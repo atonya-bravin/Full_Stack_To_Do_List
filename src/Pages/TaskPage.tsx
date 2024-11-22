@@ -130,7 +130,7 @@ const TaskPage = () => {
                 ))}
             </div>
             {completedTasks.length >= 1 && (
-                <div className="w-[50%] py-[16px] flex flex-col gap-[24px] mt-[32px]">
+                <div className="w-[90%] md:w-[75%] lg:w-[50%] py-[16px] flex flex-col gap-[24px] mt-[32px]">
                     <div className="w-full py-[16px] px-[16px] bg-[#2E4DE6] bg-opacity-80 text-white font-medium text-center rounded-[4px]">
                         Completed
                     </div>
@@ -162,9 +162,9 @@ const TaskPage = () => {
                     ))}
                 </div>
             )}
-            <div className="absolute bottom-[32px] w-full flex flex-row items-center justify-center gap-[32px]">
+            <div className="absolute bottom-[32px] w-[90%] md:w-[75%] lg:w-[50%] flex flex-row items-center justify-center gap-[32px]">
                 <input 
-                    className="w-[40%] border-[2px] py-[8px] px-[16px] rounded-[4px]"
+                    className="w-full border-[2px] py-[8px] px-[16px] rounded-[4px]"
                     placeholder="Try Typing your Item"
                     value={myTask}
                     onChange={(e)=>{
@@ -174,7 +174,7 @@ const TaskPage = () => {
                     onKeyDown={handleEnter}
                 />
                 <div 
-                    className="px-[16px] py-[8px] rounded-[4px] font-medium bg-[#2E4DE6] bg-opacity-80 text-white"
+                    className="px-[16px] py-[8px] rounded-[4px] font-medium bg-[#2E4DE6] bg-opacity-80 text-white text-nowrap"
                     onClick={() => {
                         setTasks([myTask, ...tasks]);
                         setMyTask("");
