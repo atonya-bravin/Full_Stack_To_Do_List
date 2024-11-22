@@ -17,7 +17,7 @@ const HomePage = () => {
                     personal goals, Taskly makes it easy to prioritize and stay on top of everything. 
                     Let's get things done, one task at a time!
                 </div>
-                <div className="w-full flex flex-col md:flex-row gap-[40px] px-[64px] mt-[32px]">
+                <div className="w-full flex flex-col md:flex-row  gap-[24px] md:gap-[40px] md:px-[64px] mt-[24px] md:mt-[32px]">
                     {/* signUp Button */}
                     <div 
                         className="py-[16px] w-full rounded-[4px] border-[2px] bg-[#ebe9e5] hover:bg-white font-medium"
