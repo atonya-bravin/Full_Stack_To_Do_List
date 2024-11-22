@@ -92,7 +92,7 @@ const TaskPage = () => {
 
     return(
         <div className="relative w-full h-full flex flex-col items-center pt-[32px]">
-            <div className="w-[50%] py-[16px] flex flex-col gap-[24px]">
+            <div className="w-[90%] md:w-[75%] lg:w-[50%] py-[16px] flex flex-col gap-[24px]">
                 {tasks.map((task, index) => (
                     <div className="w-full py-[16px] px-[16px] rounded-[4px] bg-[#ebe9e5] bg-opacity-40 flex flex-row">
                         <div className="w-full h-full">
