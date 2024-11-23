@@ -1,8 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./V1/Pages/HomePage";
+// Version 1 Pages
+
+/* 
+  import HomePage from "./V1/Pages/HomePage"; 
+  import SignUpPage from "./V1/Pages/SignUpPage";
+  import SignInPage from "./V1/Pages/SignInPage";
+  
+*/
 import TaskPage from "./V1/Pages/TaskPage";
-import SignInPage from "./V1/Pages/SignInPage";
-import SignUpPage from "./V1/Pages/SignUpPage";
+
+
+
+//Version 2 pages
+import HomePage from "./V2/Pages/HomePage";
+import SignUpPage from "./V2/Pages/SignUpPage";
+import SignInPage from "./V2/Pages/SignInPage";
 
 const App = () => {
   return(
