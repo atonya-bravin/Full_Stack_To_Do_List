@@ -85,7 +85,7 @@ const SignInPage = () => {
   };
 
   //the class that is used to style the form in small screens the vw is 80%, medium is 70% and in large we have 40%
-  const formClass = "w-[80%] md:w-[70%] lg:w-[40%] py-[32px] border-[2px] flex items-center justify-center px-[32px] rounded-[8px]";
+  const formClass = "w-[80%] md:w-[70%] lg:w-[40%] py-[32px] border-[1px] flex items-center justify-center px-[32px] rounded-[8px]";
 
   return(
     <form className={formClass} onSubmit={handleSubmit(onSubmit)}>
@@ -96,14 +96,14 @@ const SignInPage = () => {
         <div className="w-full">
           <div className="flex flex-col gap-[8px] pt-[16px] pb-[8px]">
             <label className="font-normal text-[16px]">Email</label>
-            <input className="py-[8px] px-[8px] border-[2px] rounded-[4px]"
+            <input className="py-[8px] px-[8px] border-[1px] rounded-[4px]"
               placeholder="example@gmail.com" {...register("email", {required: true})}
             />
             {errors.email && <div className="text-[14px] text-[#DB6353]">{errors.email.message}</div>}
           </div>
           <div className="flex flex-col gap-[8px] pt-[16px] pb-[8px]">
             <label className="font-normal text-[16px]">Password</label>
-            <input className="py-[8px] px-[8px] border-[2px] rounded-[4px]" type="password" {...register("password",  {required: true})}/>
+            <input className="py-[8px] px-[8px] border-[1px] rounded-[4px]" type="password" {...register("password",  {required: true})}/>
             {errors.password && <div className="text-[14px] text-[#DB6353]">{errors.password.message}</div>}
           </div>
 

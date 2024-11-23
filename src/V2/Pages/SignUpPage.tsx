@@ -143,7 +143,7 @@ const SignUpPage = () => {
   };
   
   //the class that is used to style the form in small screens the vw is 80%, medium is 70% and in large we have 40%
-  const formClass = "w-[80%] md:w-[70%] lg:w-[40%] py-[32px] border-[2px] flex items-center justify-center px-[32px] rounded-[8px]";
+  const formClass = "w-[80%] md:w-[70%] lg:w-[40%] py-[32px] border-[1px] flex items-center justify-center px-[32px] rounded-[8px]";
 
   return(
     <form className = {formClass} onSubmit={handleSubmit(onSubmit)}>
@@ -155,12 +155,12 @@ const SignUpPage = () => {
           <div className="flex flex-col md:flex-row gap-[8px] md:gap-[16px] w-full">
             <div className="w-full flex flex-col gap-[8px] pt-[16px] pb-[8px]">
               <label>First Name</label>
-              <input className="py-[8px] px-[8px] border-[2px] rounded-[4px]" {...register("firstName")}/>
+              <input className="py-[8px] px-[8px] border-[1px] rounded-[4px]" {...register("firstName")}/>
               {errors.firstName && <div className="text-[14px] text-[#DB6353]">{errors.firstName.message}</div>}
             </div>
             <div className="w-full flex flex-col gap-[8px] pt-[16px] pb-[8px]">
               <label>Last Name</label>
-              <input className="py-[8px] px-[8px] border-[2px] rounded-[4px]" {...register("lastName")}/>
+              <input className="py-[8px] px-[8px] border-[1px] rounded-[4px]" {...register("lastName")}/>
               {errors.lastName && <div className="text-[14px] text-[#DB6353]">{errors.lastName.message}</div>}
             </div>
           </div>
@@ -169,7 +169,7 @@ const SignUpPage = () => {
           <div className="flex flex-col md:flex-row gap-[8px] md:gap-[16px] w-full">
             <div className="w-full flex flex-col gap-[8px] pt-[16px] pb-[8px]">
               <label>Email</label>
-              <input className="py-[8px] px-[8px] border-[2px] rounded-[4px]"
+              <input className="py-[8px] px-[8px] border-[1px] rounded-[4px]"
                 placeholder="example@gmail.com" {...register("email")}
               />
               {errors.email && <div className="text-[14px] text-[#DB6353]">{errors.email.message}</div>}
@@ -177,14 +177,14 @@ const SignUpPage = () => {
 
             <div className="w-full flex flex-col gap-[8px] pt-[16px] pb-[8px]">
               <label>Phone Number</label>
-              <input className="py-[8px] px-[8px] border-[2px] rounded-[4px]" {...register("phoneNumber")}
+              <input className="py-[8px] px-[8px] border-[1px] rounded-[4px]" {...register("phoneNumber")}
               />
               {errors.phoneNumber && <div className="text-[14px] text-[#DB6353]">{errors.phoneNumber.message}</div>}
             </div>
           </div>
           <div className="flex flex-col gap-[8px] pt-[16px] pb-[8px]">
             <label>Password</label>
-            <input className="py-[8px] px-[8px] border-[2px] rounded-[4px]" type="password" {...register("password")}/>
+            <input className="py-[8px] px-[8px] border-[1px] rounded-[4px]" type="password" {...register("password")}/>
             {errors.password && <div className="text-[14px] text-[#DB6353]">{errors.password.message}</div>}
           </div>
           
