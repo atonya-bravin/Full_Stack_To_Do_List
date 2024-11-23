@@ -77,6 +77,14 @@ const SignUpPage = () => {
             {errors.password && <div className="text-[14px] text-[#DB6353]">The password is required</div>}
           </div>
           
+          <div
+            className="text-[#0000FF] cursor-pointer"
+            onClick={() => {
+              window.location.href="/signIn";
+            }}
+          >
+            Already have an account?
+          </div>
           <SubmitBtn />
         </div>
       </div>      
