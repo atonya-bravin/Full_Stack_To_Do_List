@@ -1,5 +1,5 @@
+import { Outlet } from "react-router-dom";
 import LargeScreenMenu from "../Components/Menu/LargeScreenMenu";
-import Tasks from "./Tasks";
 
 const Dashboard = () => {
     return(
@@ -8,8 +8,8 @@ const Dashboard = () => {
             {/* Menu Bar */}
             <LargeScreenMenu />
 
-            {/* Tasks area -> This is the area that shows all the scheduled tasks */}
-            <Tasks />
+            {/* The task area that displays the tasks or displays a new task form */}
+            <Outlet />
         </div>
     );
 };
