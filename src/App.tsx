@@ -16,6 +16,8 @@ import HomePage from "./V2/Pages/HomePage";
 import SignUpPage from "./V2/Pages/SignUpPage";
 import SignInPage from "./V2/Pages/SignInPage";
 import Dashboard from "./V2/Pages/Dashboard";
+import Tasks from "./V2/Pages/Tasks";
+import CreateTask from "./V2/Pages/CreateTask";
 
 const App = () => {
   return(
@@ -30,7 +32,10 @@ const App = () => {
           {/* <Route path="/tasks" element={<TaskPage />} /> */}
           <Route path="/signIn" element={<SignInPage />} />
           <Route path="/SignUp" element={<SignUpPage />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Dashboard" element={<Dashboard />} >
+            <Route path="" element={<Tasks />} />
+            <Route path="newTask" element={<CreateTask />} />
+          </Route>
         </Routes>
       </Router>
     </div>

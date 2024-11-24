@@ -1,18 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logOutIcon from "../../assets/Icons/Logout.svg";
+import { useNavigate } from "react-router-dom";
+
+type MenuItem = {
+    Title: string;
+    active: boolean;
+    link: string;
+};
 
 const LargeScreenMenu = () => {
+    const navigate = useNavigate();
+
+
     // This is the method that takes effect on any active menu link
     const activeMenuItemClass = "font-bold border-b-[3px] border-b-black px-[8px]";
 
     // This is the class that takes effect on any inactive menu links
     const inactiveMenuItemClass = "font-regular border-b-[0px] px-[8px] hover:cursor-pointer";
 
+
+    const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
     // This is a list of the menu Items
-    const [menuItems, setMenuItems] = useState([
-        { Title: "Dashboard", active: true },
-        { Title: "New Task", active: false },
-    ]);
+    useEffect(() => {
+        setMenuItems([...menuItems,
+            { Title: "Dashboard", active: true, link: "/Dashboard" },
+            { Title: "New Task", active: false, link: "/Dashboard/newTask" }]);
+    },[]);
 
     // This is the function that handles the activation and deactivation of links
     const handleLinkActivation = (index: number) => {
@@ -21,6 +34,7 @@ const LargeScreenMenu = () => {
             active: i === index,
         }));
         setMenuItems(updatedMenuItems);
+        navigate(menuItems[index].link);
     };
 
     return(
