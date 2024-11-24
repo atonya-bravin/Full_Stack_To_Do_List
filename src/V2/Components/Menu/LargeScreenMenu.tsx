@@ -43,7 +43,7 @@ const LargeScreenMenu = () => {
                 Taskly
             </div>
             <div className="flex flex-row items-end w-full h-full">
-                <div className="w-full flex flex-row gap-[48px]">
+                <div className="w-full flex flex-row gap-[48px] text-nowrap">
                     {/*  */}
                     {menuItems.map((menuItem, index) => (
                         <div 
