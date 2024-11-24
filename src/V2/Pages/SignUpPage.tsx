@@ -138,8 +138,8 @@ const SignUpPage = () => {
   } = useForm<userInforType>({resolver: zodResolver(userInfor)});
 
   const onSubmit: SubmitHandler<userInforType> = (/*data*/) => {
-    //Navigation to the /tasks page when the data is successfuly validated
-    window.location.href='/tasks';
+    //Navigation to the /Dashboard page when the data is successfuly validated
+    window.location.href='/Dashboard';
   };
   
   //the class that is used to style the form in small screens the vw is 80%, medium is 70% and in large we have 40%
