@@ -3,7 +3,7 @@ import deleteIcon from "../assets/Icons/delete.svg";
 import { useTasksContext } from "../Contexts/TasksContext";
 
 const Tasks = () => {
-    const {tasks, setTasks} = useTasksContext();
+    const {tasks} = useTasksContext();
 
 
     return(
