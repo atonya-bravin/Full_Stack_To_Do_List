@@ -2,6 +2,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import SubmitBtn from "../Components/Buttons/SubmitBtn";
 import zod from "zod";
+import { useTasksContext } from "../Contexts/TasksContext";
+import { useNavigate } from "react-router-dom";
 
 //creation of a zod object to be used in data validation
 const taskInfor = zod.object({
@@ -49,12 +51,26 @@ const CreateTask = () => {
     //implementation of a type that reflects the zod object for proper data validation
     type taskInforType = zod.infer<typeof taskInfor>;
 
-  const onSubmit: SubmitHandler<taskInforType> = (/*data*/) => {
-    //Navigation to the /Dashboard page when the data is successfuly validated
-    window.location.href='/Dashboard';
-  };
+    // use of the useTasksContext function to both access and also modify the tasks.
+    const {tasks, setTasks} = useTasksContext();
+    
+    //implementation of a navigator to ensure no re-fresh on navigation
+    const navigate = useNavigate();
+
+    const onSubmit: SubmitHandler<taskInforType> = (data) => {
+        // Inclusion of the newly submited task to the list of tasks.
+        setTasks([{
+            Title: data.title,
+            Description: data.description,
+            Date: new Date()
+        }, ...tasks])
+
+        //Navigation to the /Dashboard page when the data is successfuly validated
+        navigate('/Dashboard');
+    };
 
     return(
+
         <div className="h-full w-full flex flex-col justify-center items-center">
             <div className="text-[24px] font-medium">Create New Task</div>
             <form className={formClass} onSubmit={handleSubmit(onSubmit)}>
