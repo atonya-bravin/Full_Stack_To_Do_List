@@ -3,12 +3,16 @@ import deleteIcon from "../assets/Icons/delete.svg";
 import { useTasksContext } from "../Contexts/TasksContext";
 
 const Tasks = () => {
-    const {tasks} = useTasksContext();
+    //use of the useTasksContext to access the tasks
+    const {tasks, setTasks} = useTasksContext();
 
+    const handleTaskDeletion = (index: number) => {
+        setTasks(tasks.filter((_, i) => i !== index));
+    };
 
     return(
         <div className="w-[70%] py-[32px] flex flex-col gap-[32px]">
-            {tasks.map((task) => (
+            {tasks.map((task, index) => (
                 <div className="w-full flex flex-col gap-[16px] border-[1px] pb-[16px] rounded-[4px]">
                     <div className="text-[18px] font-medium bg-[#ebe9e5] px-[16px] py-[8px] rounded-[4px]">
                         {task.Title}
@@ -26,7 +30,11 @@ const Tasks = () => {
                                     <div className="h-full flex justify-center items-center">
                                         <img src={deleteIcon} alt="" />
                                     </div>
-                                    <div className="font-medium text-white">DELETE</div>
+                                    <div className="font-medium text-white"
+                                        onClick={() => {
+                                            handleTaskDeletion(index);
+                                        }}
+                                    >DELETE</div>
                                 </div>
                             </div>
                             <div className="px-[16px] py-[4px] justify-center items-center bg-[#3182CE] rounded-[4px]">
