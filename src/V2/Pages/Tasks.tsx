@@ -1,14 +1,16 @@
 import editIcon from "../assets/Icons/edit.svg";
 import deleteIcon from "../assets/Icons/delete.svg";
 
-const tasks: {Title: string, Description: string }[] = [
+const tasks: {Title: string, Description: string, Date: Date }[] = [
     {
         Title: "Washing The Bathroom",
-        Description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti dolorum, illo voluptatibus error, soluta tempore impedit asperiores repudiandae voluptatem dolorem est magnam ex ab assumenda. Officia provident quis consequatur."
+        Description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti dolorum, illo voluptatibus error, soluta tempore impedit asperiores repudiandae voluptatem dolorem est magnam ex ab assumenda. Officia provident quis consequatur.",
+        Date: new Date(2024,11,1)
     },
     {
         Title: "Reading The Bible",
-        Description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. "
+        Description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
+        Date: new Date(2024,4,23)
     }
 ]
 
@@ -23,21 +25,26 @@ const Tasks = () => {
                     <div className="px-[16px]">
                         {task.Description}
                     </div>
-                    <div className="flex flex-row gap-[32px] justify-end px-[16px]">
-                        <div className="px-[16px] py-[4px] flex justify-center items-center font-medium bg-[#E53E3E] text-white rounded-[4px]">
-                            <div className="flex flex-row gap-[8px]">
-                                <div className="h-full flex justify-center items-center">
-                                    <img src={deleteIcon} alt="" />
-                                </div>
-                                <div className="font-medium text-white">DELETE</div>
-                            </div>
+                    <div className="w-full flex flex-row px-[16px]">
+                        <div className="w-full text-[14px] text-[#6B7280] flex items-center">
+                            Created On: {task.Date.toLocaleDateString()}
                         </div>
-                        <div className="px-[16px] py-[4px] justify-center items-center bg-[#3182CE] rounded-[4px]">
-                            <div className="flex flex-row gap-[8px]">
-                                <div className="h-full flex justify-center items-center">
-                                    <img src={editIcon} alt="" />
+                        <div className="flex flex-row gap-[32px] justify-end px-[16px]">
+                            <div className="px-[16px] py-[4px] flex justify-center items-center font-medium bg-[#E53E3E] text-white rounded-[4px]">
+                                <div className="flex flex-row gap-[8px]">
+                                    <div className="h-full flex justify-center items-center">
+                                        <img src={deleteIcon} alt="" />
+                                    </div>
+                                    <div className="font-medium text-white">DELETE</div>
                                 </div>
-                                <div className="font-medium text-white">EDIT</div>
+                            </div>
+                            <div className="px-[16px] py-[4px] justify-center items-center bg-[#3182CE] rounded-[4px]">
+                                <div className="flex flex-row gap-[8px]">
+                                    <div className="h-full flex justify-center items-center">
+                                        <img src={editIcon} alt="" />
+                                    </div>
+                                    <div className="font-medium text-white">EDIT</div>
+                                </div>
                             </div>
                         </div>
                     </div>
