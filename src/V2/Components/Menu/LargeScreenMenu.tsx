@@ -38,7 +38,7 @@ const LargeScreenMenu = () => {
     };
 
     return(
-        <div className="w-[90%] lg:w-[80%] h-[54px] flex flex-row justify-center items-center border-b-[1px] px-[24px]">
+        <div className="sticky top-0 w-[90%] lg:w-[80%] h-[54px] flex flex-row justify-center items-center border-b-[1px] px-[24px]">
             <div className="text-[24px] font-bold w-full h-full flex items-end">
                 Taskly
             </div>
