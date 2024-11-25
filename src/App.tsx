@@ -18,27 +18,30 @@ import SignInPage from "./V2/Pages/SignInPage";
 import Dashboard from "./V2/Pages/Dashboard";
 import Tasks from "./V2/Pages/Tasks";
 import CreateTask from "./V2/Pages/CreateTask";
+import TaskInfo from "./V2/Contexts/TasksContext";
 
 const App = () => {
   return(
-    <div className="w-full h-[100vh] bg-[#f4f0ec] bg-opacity-10 flex items-center justify-center">
-      {/* 
-        Configuration of the application endpoints that will be used to access different pages using 
-        either the nav or implicit navigation. 
-      */}
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          {/* <Route path="/tasks" element={<TaskPage />} /> */}
-          <Route path="/signIn" element={<SignInPage />} />
-          <Route path="/SignUp" element={<SignUpPage />} />
-          <Route path="/Dashboard" element={<Dashboard />} >
-            <Route path="" element={<Tasks />} />
-            <Route path="newTask" element={<CreateTask />} />
-          </Route>
-        </Routes>
-      </Router>
-    </div>
+    <TaskInfo >
+      <div className="w-full h-[100vh] bg-[#f4f0ec] bg-opacity-10 flex items-center justify-center">
+        {/* 
+          Configuration of the application endpoints that will be used to access different pages using 
+          either the nav or implicit navigation. 
+        */}
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            {/* <Route path="/tasks" element={<TaskPage />} /> */}
+            <Route path="/signIn" element={<SignInPage />} />
+            <Route path="/SignUp" element={<SignUpPage />} />
+            <Route path="/Dashboard" element={<Dashboard />} >
+              <Route path="" element={<Tasks />} />
+              <Route path="newTask" element={<CreateTask />} />
+            </Route>
+          </Routes>
+        </Router>
+      </div>
+    </TaskInfo>
   );
 };
 
