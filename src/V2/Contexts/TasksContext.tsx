@@ -14,17 +14,7 @@ type TaskContextType = {
 const TaskContext = createContext<TaskContextType | undefined>(undefined);
 
 export default function TaskInfo({children}: {children: React.ReactNode}){
-    const [tasks, setTasks] = useState<TaksType[]>([
-        {
-            Title: "Washing The Bathroom",
-            Description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti dolorum, illo voluptatibus error, soluta tempore impedit asperiores repudiandae voluptatem dolorem est magnam ex ab assumenda. Officia provident quis consequatur.",
-            Date: new Date(2024,11,1)
-        },
-        {
-            Title: "Reading The Bible",
-            Description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
-            Date: new Date(2024,4,23)
-        }]);
+    const [tasks, setTasks] = useState<TaksType[]>([]);
     return(
         <TaskContext.Provider value={{tasks, setTasks}}>
             {children}
