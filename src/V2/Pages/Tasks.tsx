@@ -95,7 +95,7 @@ const Tasks = () => {
                         </div>
                         <div className="w-full flex flex-row px-[16px]">
                             <div className="w-full text-[14px] text-[#6B7280] flex items-center">
-                                Created On: {task.Date.toLocaleDateString()}
+                                Created On: {(new Date(task.Date)).toLocaleDateString()}
                             </div>
                             <div className="flex flex-row gap-[32px] justify-end px-[16px]">
                                 <div className="px-[16px] py-[4px] flex justify-center items-center font-medium bg-[#E53E3E] text-white rounded-[4px]">
