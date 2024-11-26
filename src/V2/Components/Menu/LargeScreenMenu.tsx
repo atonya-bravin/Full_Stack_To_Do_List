@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import logOutIcon from "../../assets/Icons/Logout.svg";
 import { useNavigate } from "react-router-dom";
+import { useTasksContext } from "../../Contexts/TasksContext";
+
 
 type MenuItem = {
     Title: string;
@@ -9,6 +11,13 @@ type MenuItem = {
 };
 
 const LargeScreenMenu = () => {
+    /* 
+        Task information from the context
+        This inforamtion is what we will save to local storage when we click the logout button
+    */
+    const {tasks} = useTasksContext();
+
+
     const navigate = useNavigate();
 
 
@@ -57,6 +66,14 @@ const LargeScreenMenu = () => {
                 <div
                     className="cursor-pointer flex items-center gap-[8px] justify-center mb-[4px] px-[16px] h-[36px] text-nowrap bg-[#2E4DE6] text-white font-medium rounded-[4px]"
                     onClick={() => {
+                        try {
+                            // Checking whether local storage is present in the device.
+                            if (typeof localStorage !== 'undefined'){
+                                localStorage.setItem("myTasks", JSON.stringify(tasks));
+                            }
+                        } catch (error) {
+                            console.error("Error Saving data to local storage", error);
+                        }
                         window.location.href="/signIn";
                     }}
                 >
