@@ -21,7 +21,9 @@ const TaskContext = createContext<TaskContextType | undefined>(
 );
 
 export default function TaskInfo({children}: {children: React.ReactNode}){
-    const [tasks, setTasks] = useState<TaksType[]>([]);
+    //Retrival of the saved data and installation into the context
+    const storedTasks = localStorage.getItem("myTasks");
+    const [tasks, setTasks] = useState<TaksType[]>(storedTasks ? JSON.parse(storedTasks) : []);
     const [taskIndex, setTaskIndex] = useState<number>();
     return(
         <TaskContext.Provider value={{tasks, setTasks, taskIndex, setTaskIndex}}>
