@@ -63,7 +63,24 @@ const CreateTask = () => {
             Title: data.title,
             Description: data.description,
             Date: new Date()
-        }, ...tasks])
+        }, ...tasks]);
+
+
+        // Reset the tasks list to the currently updated one
+
+        const updateTasks = [{
+            Title: data.title,
+            Description: data.description,
+            Date: new Date()
+        }, ...tasks];
+        try {
+            // Checking whether local storage is present in the device.
+            if (typeof localStorage !== 'undefined'){
+                localStorage.setItem("myTasks", JSON.stringify(updateTasks));
+            }
+        } catch (error) {
+            console.error("Error Saving data to local storage", error);
+        }
 
         //Navigation to the /Dashboard page when the data is successfuly validated
         navigate('/Dashboard');
