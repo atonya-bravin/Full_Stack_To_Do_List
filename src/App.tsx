@@ -15,10 +15,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./V2/Pages/HomePage";
 import SignUpPage from "./V2/Pages/SignUpPage";
 import SignInPage from "./V2/Pages/SignInPage";
-import Dashboard from "./V2/Pages/Dashboard";
-import Tasks from "./V2/Pages/Tasks";
-import CreateTask from "./V2/Pages/CreateTask";
-import TaskInfo from "./V2/Contexts/TasksContext";
+// import Dashboard from "./V2/Pages/Dashboard";
+// import Tasks from "./V2/Pages/Tasks";
+// import CreateTask from "./V2/Pages/CreateTask";
+//import TaskInfo from "./V2/Contexts/TasksContext";
+
+//Version 3 Pages
+import Tasks from "./V3/Pages/Tasks";
+import TaskInfo from "./V3/Contexts/TasksContext";
+import CreateTask from "./V3/Pages/CreateTask";
+import Dashboard from "./V3/Pages/Dashboard";
 
 const App = () => {
   return(
