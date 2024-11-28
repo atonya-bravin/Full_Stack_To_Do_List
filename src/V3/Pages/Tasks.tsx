@@ -30,6 +30,7 @@ const taskInfor = zod.object({
 const Tasks = () => {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<taskInforType>({ resolver: zodResolver(taskInfor) });
@@ -66,9 +67,23 @@ const Tasks = () => {
     
     navigate("/Dashboard");
     setEdit(false);
+
+    setEditTask(
+      {
+        Title: "",
+        Description: "",
+        Date: new Date
+      }
+    );
+
+    /*
+      Resets the form back to default.
+      This fixes the issue of the edit form's persistent data.
+    */ 
+    reset();
   };
 
-  const { tasks, setTasks, taskIndex, setTaskIndex } = useTasksContext();
+  const { tasks, setTasks, taskIndex, setTaskIndex, editTask, setEditTask } = useTasksContext();
 
   const handleTaskDeletion = (index: number) => {
     setTasks(tasks.filter((_, i) => i !== index));
@@ -112,6 +127,11 @@ const Tasks = () => {
             onClick={() => {
               setEdit(true);
               setTaskIndex(row.index);
+              setEditTask({
+                Title: tasks[row.index].Title,
+                Description: tasks[row.index].Description,
+                Date: tasks[row.index].Date
+              })
             }}
           >
             <div className="h-full flex justify-center items-center">
@@ -216,6 +236,7 @@ const Tasks = () => {
                   <input
                     className="w-full py-[8px] px-[8px] border-[1px] rounded-[4px]"
                     {...register("title", { required: true })}
+                    defaultValue={editTask?.Title}
                   />
                   {errors.title && <div className="text-[14px] text-[#DB6353]">{errors.title.message}</div>}
                 </div>
@@ -225,6 +246,7 @@ const Tasks = () => {
                     className="w-full py-[8px] px-[8px] border-[1px] rounded-[4px] resize-none"
                     rows={3}
                     {...register("description", { required: true })}
+                    defaultValue={editTask?.Description}
                   />
                   {errors.description && (
                     <div className="text-[14px] text-[#DB6353]">{errors.description.message}</div>
